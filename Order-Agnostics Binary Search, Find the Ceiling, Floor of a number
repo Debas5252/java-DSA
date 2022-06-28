@@ -33,6 +33,10 @@ public class OrderAgnosticBS {
                     end=mid-1;
                 }
             }
+            //if the number greater than the greatest number in the array:-
+            if (target>arr[arr.length-1]){
+                return -1;
+            }
         }
         return start;
         //return end;
