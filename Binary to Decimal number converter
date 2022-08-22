@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+class main{
+    public static void main(String args[]) 
+	{
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter a Binary Number : ");
+		long binaryNumber = sc.nextLong();
+
+		long decimalNumber = BinaryToDecimal(binaryNumber);
+
+		System.out.println("Decimal Number Equivalent : " + decimalNumber);
+
+	}
+    public static long BinaryToDecimal(long binaryNum)
+	{
+        long decimalOut = 0;
+		long lastDigit = 0;
+		int power = 0;
+
+		while(binaryNum > 0)
+		{
+			lastDigit = binaryNum % 10;
+			decimalOut += lastDigit * Math.pow(2, power);
+			power++;
+			binaryNum /= 10;
+		}
+
+		return decimalOut;
+	}
+}
